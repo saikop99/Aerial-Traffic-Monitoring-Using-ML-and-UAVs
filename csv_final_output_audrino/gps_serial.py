@@ -5,7 +5,6 @@ for i in range (10):
     se = ser.readline()[:-2]
     z = []
     se = se.decode('ascii','ignore') #Decoding to an intige
-    z = str(se)
     print(z)
-    
+    z = str(se)
 ser.close()
