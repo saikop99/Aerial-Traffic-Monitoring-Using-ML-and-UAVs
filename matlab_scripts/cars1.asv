@@ -4,7 +4,7 @@ obj=VideoReader([pathname '/' filename]);
 numberOfFrames = get(obj,'NumberOfFrames')
 frameRate=get(obj,'FrameRate')
 darkCarvalue=50;
-darkCar=rgb2gray(read(obj,4000));
+darkCar=rgb2gray(read(obj,4000);
 figure(1)
 title('darkCars');
 imshow(darkCar)
@@ -19,11 +19,11 @@ imshow(noSmallStructures)
 
 %for video
 for k=1:numberOfFrames
-    singleFrame=read(obj,k);
+    singleFrame=reaad(obj,k);
     I=rgb2gray(singleFrame);
     noSmallStructures=imopen(noDarkCars,sedisk);
     noSmallStructures=bwareaopen(noSmallStructures,150);
-    taggedCars(:,:,:,:,k) = singleFrame;
+    taggedCars(:,:,:,k) = singleFrame;
    
     stats = regionprops(noSmallStructures, {'Centroid','Area'});
     if ~isempty([stats.Area])
@@ -38,5 +38,4 @@ for k=1:numberOfFrames
         taggedCars(row,col,2,k) = 0;
         taggedCars(row,col,3,k) = 0;
     end
-end
-implay(taggedCars,frameRate);
+    impla
