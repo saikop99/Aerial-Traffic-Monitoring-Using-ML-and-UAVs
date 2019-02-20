@@ -4,7 +4,7 @@ obj=VideoReader([pathname '/' filename]);
 numberOfFrames = get(obj,'NumberOfFrames')
 frameRate=get(obj,'FrameRate')
 darkCarvalue=50;
-darkCar=rgb2gray(read(obj,4000);
+darkCar=rgb2gray(read(obj,1000));
 figure(1)
 title('darkCars');
 imshow(darkCar)
@@ -19,7 +19,7 @@ imshow(noSmallStructures)
 
 %for video
 for k=1:numberOfFrames
-    singleFrame=reaad(obj,k);
+    singleFrame=read(obj,k);
     I=rgb2gray(singleFrame);
     noSmallStructures=imopen(noDarkCars,sedisk);
     noSmallStructures=bwareaopen(noSmallStructures,150);
@@ -38,4 +38,5 @@ for k=1:numberOfFrames
         taggedCars(row,col,2,k) = 0;
         taggedCars(row,col,3,k) = 0;
     end
-    impla
+end
+implay(taggedCars,frameRate);

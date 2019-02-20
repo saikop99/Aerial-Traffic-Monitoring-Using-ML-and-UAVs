@@ -23,7 +23,7 @@ for k=1:numberOfFrames
     I=rgb2gray(singleFrame);
     noSmallStructures=imopen(noDarkCars,sedisk);
     noSmallStructures=bwareaopen(noSmallStructures,150);
-    taggedCars(:,:,:,:,k) = singleFrame;
+    taggedCars(:,:,k) = singleFrame;
    
     stats = regionprops(noSmallStructures, {'Centroid','Area'});
     if ~isempty([stats.Area])
