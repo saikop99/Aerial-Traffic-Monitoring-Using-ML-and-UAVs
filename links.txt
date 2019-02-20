@@ -1,3 +1,12 @@
 https://github.com/mapbox/robosat
 https://medium.com/machine-learning-world/tutorial-making-road-traffic-counting-app-based-on-computer-vision-and-opencv-166937911660
 https://github.com/alex-drake/OpenCV-Traffic-Counter
+
+#google developer Roads api for speed limit detection using the gps coordinates
+https://developers.google.com/maps/documentation/roads/intro
+
+# matlab detecting vechicles and cars using blob detection and Guasian mixtures
+https://in.mathworks.com/help/vision/examples/detecting-cars-using-gaussian-mixture-models.html
+
+#motion based multiple object tracking MATLAB
+https://in.mathworks.com/help/vision/examples/motion-based-multiple-object-tracking.html
