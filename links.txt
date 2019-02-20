@@ -10,3 +10,5 @@ https://in.mathworks.com/help/vision/examples/detecting-cars-using-gaussian-mixt
 
 #motion based multiple object tracking MATLAB
 https://in.mathworks.com/help/vision/examples/motion-based-multiple-object-tracking.html
+
+https://github.com/topics/vehicle-detection?o=desc&s=stars
