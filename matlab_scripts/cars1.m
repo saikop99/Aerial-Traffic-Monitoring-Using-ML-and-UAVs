@@ -4,7 +4,7 @@ obj=VideoReader([pathname '/' filename]);
 numberOfFrames = get(obj,'NumberOfFrames')
 frameRate=get(obj,'FrameRate')
 darkCarvalue=50;
-darkCar=rgb2gray(read(obj,4000));
+darkCar=rgb2gray(read(obj,1000));
 figure(1)
 title('darkCars');
 imshow(darkCar)
