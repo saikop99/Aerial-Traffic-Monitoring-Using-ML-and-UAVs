@@ -13,7 +13,7 @@ for i in range (10):
     z = str(se)
     data_file.write(x+","+y+","+z)
     data_file.write("\n")
-	print(z+"\n)
+print(z+"\n")
 ser.close()
 data_file.close()
 print("done")

@@ -1,7 +1,9 @@
 foregroundDetector = vision.ForegroundDetector('NumGaussians', 3, ...
     'NumTrainingFrames', 50);
 
-videoReader = vision.VideoFileReader('testvid1.mp4');
+[file,path]=uigetfile('*.mp4','Select target video');
+target=[file '\' path];
+videoReader = VideoReader(target);
 for i = 1:150
     frame = step(videoReader); % read the next video frame
     foreground = step(foregroundDetector, frame);
