@@ -4,3 +4,11 @@ Opencv/cv2_vid/
 Opencv/Opencv_new_vid/
 Opencv/scripts/speed-detector
 matlab_scripts/video/
+ML_based_detection_scripts/Opencv/cv2_vid
+ML_based_detection_scripts/speed detector/speed-detector-master-2/data_vid_img
+ML_based_detection_scripts/speed detector/speed-detector-master-2/images
+ML_based_detection_scripts/work/data_vid_weight_model
+ML_based_detection_scripts/yolo object det/image_aerial_data/data
+ML_based_detection_scripts/yolo object det/object-detection-opencv/data_img_vid
+ML_based_detection_scripts/yolo object det/YOLO-Annotation-Tool/data_img_vid
+ML_based_detection_scripts/yolo object det/yolo-object-detection_pyimage_search/yolo-object-detection/data_vid_img_weights
