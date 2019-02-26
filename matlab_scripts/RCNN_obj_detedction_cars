@@ -1,0 +1,6 @@
+clc
+clear all
+close all
+
+[fileName,pathName]=uigetfile('*.jpg','Select target image');
+a=imread([pathName '/' fileName]);

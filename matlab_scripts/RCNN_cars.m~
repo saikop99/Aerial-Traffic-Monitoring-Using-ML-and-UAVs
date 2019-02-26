@@ -1,0 +1,8 @@
+clc
+clear all
+close all
+
+files=
+a=imread('img.jpg');
+figure(1)
+imshow(a);

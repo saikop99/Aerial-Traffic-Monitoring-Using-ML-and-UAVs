@@ -47,7 +47,7 @@ for i = 2:nframes
                 fg(k,j) = fr_bw(k,j);
                 if or(abs(prev(1) - j) > plotThres, abs(prev(2) -k) > plotThres)
                     % Plot the red rectungle around the car
-                    if(and(k-2 > 0, k+2 <0, j+2 > 100)
+                    if(and(k-2 > 0, k+2 <0, j+2 > 100))
             countCars=countCars+1;
             RC_Val = false;
         end
