@@ -8,6 +8,7 @@ import imutils
 import time
 import cv2
 import os
+import datetime
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -64,6 +65,7 @@ except:
 	total = -1
 
 # loop over frames from the video file stream
+coun = 0
 while True:
 	# read the next frame from the file
 	(grabbed, frame) = vs.read()
@@ -159,10 +161,16 @@ while True:
 			print("[INFO] single frame took {:.4f} seconds".format(elap))
 			print("[INFO] estimated total time to finish: {:.4f}".format(
 				elap * total))
-
+	coun = coun+1
+	if coun%10==0:
+		data_file = open("vehicles_data_detected.txt","a")
+		vehicle_count=classIDs.count(2)+classIDs.count(3)+classIDs.count(4)+classIDs.count(6)
+		currentDT=datetime.datetime.now()
+		print(str(currentDT)+" ===> "+str(vehicle_count)+" vehicles detected")
+		data_file.write(str(currentDT)+" ===> "+str(vehicle_count)+"\n")
+		data_file.close()
 	# write the output frame to disk
 	writer.write(frame)
-
 # release the file pointers
 print("[INFO] cleaning up...")
 writer.release()
