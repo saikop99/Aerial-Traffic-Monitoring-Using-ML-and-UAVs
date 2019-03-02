@@ -3,9 +3,7 @@ from gmplot import gmplot
 # Place map
 gmap = gmplot.GoogleMapPlotter(37.766956, -122.438481, 13)
 # Scatter points
-txtfile=fopen('vehicles_data_detected.txt','r')
-while(txtfile.read()!=eof()):
-    txtfile.read()
+
 top_attraction_lats, top_attraction_lons = zip(*[
     (37.769901, -122.498331),
     (37.768645, -122.475328),
@@ -14,6 +12,6 @@ top_attraction_lats, top_attraction_lons = zip(*[
     (37.767187, -122.467496),
     (37.770104, -122.470436)
     ])
-gmap.heatmap(top_attraction_lats,top_attraction_lons)
+gmap.heatmap(top_attraction_lats,top_attraction_lons,radius=15,dissipating=True)
 # Draw
 gmap.draw("my_map.html")

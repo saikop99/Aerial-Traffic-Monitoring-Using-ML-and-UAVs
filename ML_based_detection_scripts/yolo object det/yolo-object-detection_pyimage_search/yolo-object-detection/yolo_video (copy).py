@@ -168,9 +168,8 @@ while True:
 		data_file = open("vehicles_data_detected.txt","a")
 		vehicle_count=classIDs.count(2)+classIDs.count(3)+classIDs.count(4)+classIDs.count(6)
 		currentDT=datetime.datetime.now()
-		fileDT=datetime.datetime.now().time()
 		print(str(currentDT)+" ===> "+str(vehicle_count)+" vehicles detected")
-		data_file.write(str(fileDT)+","+str(vehicle_count)+"\n")
+		data_file.write(str(currentDT)+" ===> "+str(vehicle_count)+"\n")
 		data_file.close()
 	# write the output frame to disk
 	writer.write(frame)
