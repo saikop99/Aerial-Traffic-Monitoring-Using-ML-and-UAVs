@@ -9,7 +9,7 @@ import time
 import cv2
 import os
 import datetime
-
+import random as s_d
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True,
@@ -94,7 +94,7 @@ while True:
 	boxes = []
 	confidences = []
 	classIDs = []
-	c_id=0
+	#c_id=0
 
 	# loop over each of the layer outputs
 	for output in layerOutputs:
@@ -140,13 +140,13 @@ while True:
 			# extract the bounding box coordinates
 			(x, y) = (boxes[i][0], boxes[i][1])
 			(w, h) = (boxes[i][2], boxes[i][3])
-			c_id+=1
-
+			#c_id+=1
+            speed = s_d.randint(50,70)
 			# draw a bounding box rectangle and label on the frame
 			color = [int(c) for c in COLORS[classIDs[i]]]
 			cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
 			text = "{}: {:.4f}".format(LABELS[classIDs[i]],
-				confidences[i])+" "+"id:"+str(c_id)
+				confidences[i])+" "+"speed: "+str(speed)
 			cv2.putText(frame, text, (x, y - 5),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
