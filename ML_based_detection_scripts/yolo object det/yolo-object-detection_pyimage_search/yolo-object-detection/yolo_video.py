@@ -10,6 +10,7 @@ import cv2
 import os
 import datetime
 import random as s_d
+import math
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True,
@@ -29,7 +30,7 @@ labelsPath = os.path.sep.join([args["yolo"], "coco.names"])
 LABELS = open(labelsPath).read().strip().split("\n")
 
 # initialize a list of colors to represent each possible class label
-np.random.seed(42)
+#np.random.seed(42)
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
 	dtype="uint8")
 
@@ -66,6 +67,7 @@ except:
 
 # loop over frames from the video file stream
 coun = 0
+cen_arr = []
 while True:
 	# read the next frame from the file
 	(grabbed, frame) = vs.read()
@@ -94,7 +96,7 @@ while True:
 	boxes = []
 	confidences = []
 	classIDs = []
-	#c_id=0
+	c_id=1
 
 	# loop over each of the layer outputs
 	for output in layerOutputs:
@@ -141,14 +143,18 @@ while True:
 			(x, y) = (boxes[i][0], boxes[i][1])
 			(w, h) = (boxes[i][2], boxes[i][3])
 			#c_id+=1
-            speed = s_d.randint(50,70)
+			(x, y) = (boxes[i][0], boxes[i][1])
+			(w, h) = (boxes[i][2], boxes[i][3])
 			# draw a bounding box rectangle and label on the frame
 			color = [int(c) for c in COLORS[classIDs[i]]]
-			cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
+			cv2.rectangle(frame, (x, y), (x + w, y + h), color)
+			cen_cor1,cen_cor2 = (x+w)/2,(y+h)/2
+			cen_arr.append(str(str(c_id)+","+str(cen_cor1)+","+str(cen_cor2)))
 			text = "{}: {:.4f}".format(LABELS[classIDs[i]],
-				confidences[i])+" "+"speed: "+str(speed)
+				confidences[i])+" "+"id:"+str(c_id)+"cen="+str(cen_cor1)+","+str(cen_cor2) 
 			cv2.putText(frame, text, (x, y - 5),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+			c_id=c_id+1
 
 	# check if the video writer is None
 	if writer is None:
@@ -164,7 +170,13 @@ while True:
 			print("[INFO] estimated total time to finish: {:.4f}".format(
 				elap * total))
 	coun = coun+1
-	if coun%10==0:
+	if coun%30==0:
+	    #distance start
+		id_car,cen_corr_x_start,cen_corr_y_start=cen_arr[0].split(",")
+		id_car,cen_corr_x_end,cen_corr_y_end = cen_arr[29].split(",")
+		distance = math.sqrt((float(cen_corr_x_end)-float(cen_corr_x_start))**2+(float(cen_corr_y_end)-float(cen_corr_y_start))**2)
+		print(distance)
+		#distance end
 		data_file = open("vehicles_data_detected.txt","a")
 		vehicle_count=classIDs.count(2)+classIDs.count(3)+classIDs.count(4)+classIDs.count(6)
 		currentDT=datetime.datetime.now()
