@@ -73,7 +73,7 @@ classLabels = ["aeroplane",	"bicycle",	"bird"	,"boat",	"bottle"	,"bus"	,"car",..
 %have a CUDA enbled GPU.
 
 tic
-out = predict(yoloml,image,'ExecutionEnvironment','gpu');
+out = predict(yoloml,image,'ExecutionEnvironment','cpu');
 toc
 
 %plot the 1x1470 output vector. Indices 1-980 are class probabilities,
