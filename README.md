@@ -1,4 +1,4 @@
-##Aerial Traffic Monitoring Using UAVs
+# Aerial Traffic Monitoring Using UAVs
 
 This project was designed and developed by "Tech Ninjas" team during Smart India Hackathon 2019. Team Details are:
 Usage of the contents of this repo is bound to the license associated.
