@@ -6,11 +6,11 @@ Usage of the contents of this repo is bound to the license associated.
 Team Name: Tech Ninjas
 Team Leader: K Sai Srinivas
 Team Members:
-		R Raman Kumar
-		S Roshini
-		Roshini Sukumaran
-		Vella Keerthana
-		S Siva Harshitha
+		R Raman Kumar, 
+		S Roshini, 
+		Roshini Sukumaran, 
+		Vella Keerthana, 
+		S Siva Harshitha.
 Team Mentor 1: Ms. D Jothi, Associate Professor, ECE.
 Team Mentor 2: Mr. P Gunasekhar Chowdary, Assistant Professor, ECE.
 
