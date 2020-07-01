@@ -1,5 +1,6 @@
 # Python code to illustrate
 # inserting data in MongoDB
+
 from pymongo import MongoClient
 import urllib.parse
 
@@ -23,7 +24,7 @@ data2 = {
         "location":"Calicut"
         }
 
-# Insert Data
+# Insert Data i MongoDB
 rec_id1 = collection.insert_one(data1)
 rec_id2 = collection.insert_one(data2)
 
