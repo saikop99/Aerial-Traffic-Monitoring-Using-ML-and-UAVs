@@ -33,3 +33,5 @@ YOLO_Python_Codes: This folder contains the files related to the YOLO CNN detect
 
 Contact: saikopparthy@gmail.com
 	 ramankumar.rudr@gmail.com
+	 vellakeerthana@gmail.com
+	 harshi62329@gmail.com
